@@ -1,11 +1,17 @@
+import HttpException from '@/utils/HttpException';
 import { Request, Response, NextFunction } from 'express';
 
 export const errorHandler = (
-  err: any,
+  err: HttpException,
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
-  console.error(err.stack);
-  res.status(500).send('Internal server error!');
+  const status = err.status || 500;
+  const message = err.message || 'Something went wrong!';
+
+  res.status(status).json({
+    status,
+    message,
+  });
 };

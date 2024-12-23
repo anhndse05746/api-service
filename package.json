@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "start": "node dist/app.js",
-    "dev": "tsc && ts-node-dev --respawn -r tsconfig-paths/register src/app.ts"
+    "dev": "concurrently \"tsc --watch\" \"ts-node-dev --respawn -r tsconfig-paths/register src/app.ts\""
   },
   "author": "AnhND",
   "license": "ISC",
@@ -19,6 +19,7 @@
   "devDependencies": {
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.2",
+    "concurrently": "^9.1.0",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.2.0",
