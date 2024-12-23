@@ -1,11 +1,18 @@
-import express from 'express';
+import 'module-alias/register';
+import express, { Request, Response } from 'express';
 import routers from './routers/routers';
+import configDotenv from 'dotenv';
+configDotenv.config();
 
 export const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(routers);
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+app.get('healthcheck', (req: Request, res: Response) => {
+  res.status(200).send('API is healthy');
+});
+
+app.listen(PORT, () => {
+  console.log(`Api service listening at http://localhost:${PORT}`);
 });
