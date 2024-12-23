@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "start": "node dist/app.js",
-    "dev": "ts-node-dev --respawn -r tsconfig-paths/register src/app.ts"
+    "dev": "tsc && ts-node-dev --respawn -r tsconfig-paths/register src/app.ts"
   },
   "author": "AnhND",
   "license": "ISC",
