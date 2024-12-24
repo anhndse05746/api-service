@@ -6,6 +6,7 @@ import express, { Request, Response } from 'express';
 import routers from '@/routers/routers';
 import { errorHandler } from '@/middlewares/errorHandler';
 import HttpException from './utils/HttpException';
+
 export const app = express();
 const PORT = process.env.PORT || 3000;
 
