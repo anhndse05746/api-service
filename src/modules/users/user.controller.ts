@@ -1,9 +1,11 @@
-import { Request, Response, Application } from 'express';
+import { Request, Response } from 'express';
+import { User } from './user.entity';
+import { AppDataSource } from '../database/data-source';
 
 export class UserController {
-  get(req: Request, res: Response) {
-    res.send("I'm a user");
+  static async get(req: Request, res: Response) {
+    console.log(AppDataSource.getRepository(User));
+    const users = await AppDataSource.getRepository(User).find({});
+    res.status(200).json(users);
   }
 }
-
-export default new UserController();

@@ -4,7 +4,6 @@
   "description": "anhnd's project",
   "main": "src/app.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "start": "node dist/app.js",
     "dev": "concurrently \"tsc --watch\" \"ts-node-dev --respawn -r tsconfig-paths/register src/app.ts\""
@@ -14,7 +13,10 @@
   "dependencies": {
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "module-alias": "^2.2.3"
+    "module-alias": "^2.2.3",
+    "pg": "^8.13.1",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.20"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
