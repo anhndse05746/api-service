@@ -5,7 +5,7 @@ declare module 'express-serve-static-core' {
     sendResponse?: (body?: any) => Response;
   }
 }
-import redisClient from 'src/utils/redis';
+import redisClient from 'src/utils/cache/redis';
 
 export const cacheMiddleware = (
   req: Request,
