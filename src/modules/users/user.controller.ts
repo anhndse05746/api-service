@@ -12,7 +12,7 @@ export class UserController {
 
   static async login(req: Request, res: Response) {
     const token = jwt.sign({}, process.env.JWT_SECRET || 'secret', {
-      expiresIn: '1m',
+      expiresIn: '30d',
     });
 
     res.status(200).json({ token });
