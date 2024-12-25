@@ -6,11 +6,14 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/app.js",
-    "dev": "concurrently \"tsc --watch\" \"ts-node-dev --respawn -r tsconfig-paths/register src/app.ts\""
+    "dev": "concurrently \"tsc --watch\" \"ts-node-dev --respawn -r tsconfig-paths/register src/app.ts\"",
+    "typeorm": "typeorm-ts-node-commonjs -d ./src/modules/database/data-source.ts"
   },
   "author": "AnhND",
   "license": "ISC",
   "dependencies": {
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "module-alias": "^2.2.3",

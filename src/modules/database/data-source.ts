@@ -13,7 +13,7 @@ export const AppDataSource: DataSource = new DataSource({
   database: POSTGRES_DB,
   synchronize: false,
   logging: false,
-  entities: ['src/modules/**/*.entity{.ts,.js}'],
-  migrations: ['src/migrations/**/*.ts'],
+  entities: ['src/modules/**/**/*.entity{.ts,.js}'],
+  migrations: ['src/modules/database/migrations/**/*{.ts,.js}'],
   // subscribers: ['src/subscribers/**/*.ts'],
 });
